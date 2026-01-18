@@ -1,0 +1,3 @@
+# Custom error handling
+# Set custom error document
+ErrorDocument 404 /tax/Student-Attendance-System/SubjectTeacher/404.php

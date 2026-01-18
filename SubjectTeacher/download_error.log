@@ -1,0 +1,169 @@
+Time: 2025-05-18 00:35:10
+Error: Unknown column 'sa.subjectId' in 'on clause'
+Query: SELECT 
+        s.firstName,
+        s.lastName,
+        s.admissionNumber,
+        c.className,
+        COUNT(DISTINCT sa.date) as totalDays,
+        SUM(CASE WHEN sa.status = 1 THEN 1 ELSE 0 END) as daysPresent,
+        SUM(CASE WHEN sa.status = 0 THEN 1 ELSE 0 END) as daysAbsent,
+        GROUP_CONCAT(
+            CONCAT(
+                DATE_FORMAT(sa.date, '%Y-%m-%d'),
+                ': ',
+                CASE WHEN sa.status = 1 THEN 'Present' ELSE 'Absent' END
+            )
+            ORDER BY sa.date DESC
+            SEPARATOR '
+'
+        ) as attendance_details FROM tblstudents s
+    INNER JOIN tblclass c ON c.Id = s.classId
+    INNER JOIN tblsubjectteacher_student sts ON sts.studentId = s.Id
+    LEFT JOIN tblsubjectattendance sa ON sa.studentId = s.Id 
+        AND sa.date BETWEEN ? AND ?
+        AND sa.subjectId = ?
+    WHERE sts.subjectTeacherId = ?
+    GROUP BY s.Id, s.firstName, s.lastName, s.admissionNumber, c.className
+    ORDER BY s.lastName ASC, s.firstName ASC
+
+Time: 2025-05-18 00:43:42
+Error: Unknown column 'sa.subjectId' in 'on clause'
+Query: SELECT 
+        s.firstName,
+        s.lastName,
+        s.admissionNumber,
+        c.className,
+        COUNT(DISTINCT sa.date) as totalDays,
+        SUM(CASE WHEN sa.status = 1 THEN 1 ELSE 0 END) as daysPresent,
+        SUM(CASE WHEN sa.status = 0 THEN 1 ELSE 0 END) as daysAbsent,
+        GROUP_CONCAT(
+            CONCAT(
+                DATE_FORMAT(sa.date, '%Y-%m-%d'),
+                ': ',
+                CASE WHEN sa.status = 1 THEN 'Present' ELSE 'Absent' END
+            )
+            ORDER BY sa.date DESC
+            SEPARATOR '
+'
+        ) as attendance_details FROM tblstudents s
+    INNER JOIN tblclass c ON c.Id = s.classId
+    INNER JOIN tblsubjectteacher_student sts ON sts.studentId = s.Id    LEFT JOIN tblsubjectattendance sa ON sa.studentId = s.Id 
+        AND sa.date BETWEEN ? AND ?
+        AND (sa.subjectId = ? OR sa.subjectTeacherId = ?)
+    WHERE sts.subjectTeacherId = ?
+    GROUP BY s.Id, s.firstName, s.lastName, s.admissionNumber, c.className
+    ORDER BY s.lastName ASC, s.firstName ASC
+
+Time: 2025-05-18 00:46:24
+Error: Unknown column 'sa.subjectId' in 'on clause'
+Query: SELECT 
+        s.firstName,
+        s.lastName,
+        s.admissionNumber,
+        c.className,
+        COUNT(DISTINCT sa.date) as totalDays,
+        SUM(CASE WHEN sa.status = 1 THEN 1 ELSE 0 END) as daysPresent,
+        SUM(CASE WHEN sa.status = 0 THEN 1 ELSE 0 END) as daysAbsent,
+        GROUP_CONCAT(
+            CONCAT(
+                DATE_FORMAT(sa.date, '%Y-%m-%d'),
+                ': ',
+                CASE WHEN sa.status = 1 THEN 'Present' ELSE 'Absent' END
+            )
+            ORDER BY sa.date DESC
+            SEPARATOR '
+'
+        ) as attendance_details FROM tblstudents s
+    INNER JOIN tblclass c ON c.Id = s.classId
+    INNER JOIN tblsubjectteacher_student sts ON sts.studentId = s.Id    LEFT JOIN tblsubjectattendance sa ON sa.studentId = s.Id 
+        AND sa.date BETWEEN ? AND ?
+        AND (sa.subjectId = ? OR sa.subjectTeacherId = ?)
+    WHERE sts.subjectTeacherId = ?
+    GROUP BY s.Id, s.firstName, s.lastName, s.admissionNumber, c.className
+    ORDER BY s.lastName ASC, s.firstName ASC
+
+Time: 2025-05-18 00:46:42
+Error: Unknown column 'sa.subjectId' in 'on clause'
+Query: SELECT 
+        s.firstName,
+        s.lastName,
+        s.admissionNumber,
+        c.className,
+        COUNT(DISTINCT sa.date) as totalDays,
+        SUM(CASE WHEN sa.status = 1 THEN 1 ELSE 0 END) as daysPresent,
+        SUM(CASE WHEN sa.status = 0 THEN 1 ELSE 0 END) as daysAbsent,
+        GROUP_CONCAT(
+            CONCAT(
+                DATE_FORMAT(sa.date, '%Y-%m-%d'),
+                ': ',
+                CASE WHEN sa.status = 1 THEN 'Present' ELSE 'Absent' END
+            )
+            ORDER BY sa.date DESC
+            SEPARATOR '
+'
+        ) as attendance_details FROM tblstudents s
+    INNER JOIN tblclass c ON c.Id = s.classId
+    INNER JOIN tblsubjectteacher_student sts ON sts.studentId = s.Id    LEFT JOIN tblsubjectattendance sa ON sa.studentId = s.Id 
+        AND sa.date BETWEEN ? AND ?
+        AND (sa.subjectId = ? OR sa.subjectTeacherId = ?)
+    WHERE sts.subjectTeacherId = ?
+    GROUP BY s.Id, s.firstName, s.lastName, s.admissionNumber, c.className
+    ORDER BY s.lastName ASC, s.firstName ASC
+
+Time: 2025-05-18 05:31:28
+Error: Unknown column 'sa.subjectId' in 'on clause'
+Query: SELECT 
+        s.firstName,
+        s.lastName,
+        s.admissionNumber,
+        c.className,
+        COUNT(DISTINCT sa.date) as totalDays,
+        SUM(CASE WHEN sa.status = 1 THEN 1 ELSE 0 END) as daysPresent,
+        SUM(CASE WHEN sa.status = 0 THEN 1 ELSE 0 END) as daysAbsent,
+        GROUP_CONCAT(
+            CONCAT(
+                DATE_FORMAT(sa.date, '%Y-%m-%d'),
+                ': ',
+                CASE WHEN sa.status = 1 THEN 'Present' ELSE 'Absent' END
+            )
+            ORDER BY sa.date DESC
+            SEPARATOR '
+'
+        ) as attendance_details FROM tblstudents s
+    INNER JOIN tblclass c ON c.Id = s.classId
+    INNER JOIN tblsubjectteacher_student sts ON sts.studentId = s.Id    LEFT JOIN tblsubjectattendance sa ON sa.studentId = s.Id 
+        AND sa.date BETWEEN ? AND ?
+        AND (sa.subjectId = ? OR sa.subjectTeacherId = ?)
+    WHERE sts.subjectTeacherId = ?
+    GROUP BY s.Id, s.firstName, s.lastName, s.admissionNumber, c.className
+    ORDER BY s.lastName ASC, s.firstName ASC
+
+Time: 2025-05-18 05:31:45
+Error: Unknown column 'sa.subjectId' in 'on clause'
+Query: SELECT 
+        s.firstName,
+        s.lastName,
+        s.admissionNumber,
+        c.className,
+        COUNT(DISTINCT sa.date) as totalDays,
+        SUM(CASE WHEN sa.status = 1 THEN 1 ELSE 0 END) as daysPresent,
+        SUM(CASE WHEN sa.status = 0 THEN 1 ELSE 0 END) as daysAbsent,
+        GROUP_CONCAT(
+            CONCAT(
+                DATE_FORMAT(sa.date, '%Y-%m-%d'),
+                ': ',
+                CASE WHEN sa.status = 1 THEN 'Present' ELSE 'Absent' END
+            )
+            ORDER BY sa.date DESC
+            SEPARATOR '
+'
+        ) as attendance_details FROM tblstudents s
+    INNER JOIN tblclass c ON c.Id = s.classId
+    INNER JOIN tblsubjectteacher_student sts ON sts.studentId = s.Id    LEFT JOIN tblsubjectattendance sa ON sa.studentId = s.Id 
+        AND sa.date BETWEEN ? AND ?
+        AND (sa.subjectId = ? OR sa.subjectTeacherId = ?)
+    WHERE sts.subjectTeacherId = ?
+    GROUP BY s.Id, s.firstName, s.lastName, s.admissionNumber, c.className
+    ORDER BY s.lastName ASC, s.firstName ASC
+

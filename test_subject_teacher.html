@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Teacher Module Testing</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; }
+        .section { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .button { display: inline-block; padding: 10px 20px; margin: 5px; background: #007bff; color: white; text-decoration: none; border-radius: 3px; }
+        .button:hover { background: #0056b3; }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .info { color: #17a2b8; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Subject Teacher Module Testing Dashboard</h1>
+    
+    <div class="section">
+        <h2>🔧 Database Fix & Setup</h2>
+        <p>First, run the database fix to ensure all tables are created:</p>
+        <a href="final_subject_teacher_fix.php" class="button" target="_blank">Run Database Fix</a>
+        <p><small>This creates missing tables: tblsubjectteacher_student, tblsubjectattendance</small></p>
+    </div>
+
+    <div class="section">
+        <h2>🔐 Login Testing</h2>
+        <p>Test the Subject Teacher login functionality:</p>
+        <a href="subjectTeacherLogin.php" class="button" target="_blank">Subject Teacher Login</a>
+        <div style="margin-top: 10px;">
+            <strong>Test Credentials:</strong><br>
+            <strong>Email:</strong> john.smith@school.com<br>
+            <strong>Password:</strong> Password@123
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📊 Dashboard Access</h2>
+        <p>Direct access to Subject Teacher dashboard (after login):</p>
+        <a href="SubjectTeacher/index.php" class="button" target="_blank">Subject Teacher Dashboard</a>
+        <p><small>Note: You must be logged in to access this page</small></p>
+    </div>
+
+    <div class="section">
+        <h2>🔍 Module Comparison</h2>
+        <p>Compare Subject Teacher with Class Teacher module for development reference:</p>
+        <a href="module_comparison.html" class="button" target="_blank">Module Comparison</a>
+        <a href="ClassTeacher/index.php" class="button" target="_blank">Class Teacher Reference</a>
+    </div>
+
+    <div class="section">
+        <h2>🛠️ Debug & Verification Tools</h2>
+        <a href="complete_login_fix.php" class="button" target="_blank">Login Setup Verification</a>
+        <a href="table_check.php" class="button" target="_blank">Table Structure Check</a>
+    </div>
+
+    <div class="section">
+        <h2>📋 Testing Steps</h2>
+        <ol>
+            <li class="info">Run the Database Fix first to create missing tables</li>
+            <li class="info">Test login with the provided credentials</li>
+            <li class="info">Access the Subject Teacher dashboard</li>
+            <li class="info">Compare functionality with Class Teacher module</li>
+            <li class="success">Verify all features work correctly</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>📝 Known Issues & Solutions</h2>
+        <ul>
+            <li><strong>Table doesn't exist error:</strong> Run the database fix script</li>
+            <li><strong>Login fails:</strong> Check credentials and run login fix</li>
+            <li><strong>Dashboard empty:</strong> Ensure student-teacher relationships are set up</li>
+            <li><strong>Comparison needed:</strong> Use Class Teacher module as reference</li>
+        </ul>
+    </div>
+</body>
+</html>

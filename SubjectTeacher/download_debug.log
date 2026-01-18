@@ -1,0 +1,78 @@
+Time: 2025-05-18 00:35:10
+Session: {"csrf_token":"bc6717505bff7c222a379eb7d4d9ecbc0baa9b913640f6dcc651ccb84d1134f1","userId":11,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1747521310,"LAST_ACTIVITY":1747521310,"user_type":"SubjectTeacher","subjectCode":"MAT1"}
+GET: []
+
+Time: 2025-05-18 00:43:42
+Session: {"csrf_token":"bc6717505bff7c222a379eb7d4d9ecbc0baa9b913640f6dcc651ccb84d1134f1","userId":11,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1747521822,"LAST_ACTIVITY":1747521822,"user_type":"SubjectTeacher","subjectCode":"MAT1"}
+GET: []
+
+Time: 2025-05-18 00:46:24
+Session: {"csrf_token":"bc6717505bff7c222a379eb7d4d9ecbc0baa9b913640f6dcc651ccb84d1134f1","userId":11,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1747521984,"LAST_ACTIVITY":1747521984,"user_type":"SubjectTeacher","subjectCode":"MAT1"}
+GET: []
+
+Time: 2025-05-18 00:46:42
+Session: {"csrf_token":"bc6717505bff7c222a379eb7d4d9ecbc0baa9b913640f6dcc651ccb84d1134f1","userId":11,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1747522002,"LAST_ACTIVITY":1747522002,"user_type":"SubjectTeacher","subjectCode":"MAT1"}
+GET: []
+
+Time: 2025-05-18 05:31:28
+Session: {"csrf_token":"f1e6c8ee5a90df52a6284edd7c55a31727bfbd724ccc9a99b3668f71c5032902","userId":11,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1747539088,"LAST_ACTIVITY":1747539088,"subjectCode":"MAT1","user_type":"SubjectTeacher"}
+GET: []
+
+Time: 2025-05-18 05:31:45
+Session: {"csrf_token":"f1e6c8ee5a90df52a6284edd7c55a31727bfbd724ccc9a99b3668f71c5032902","userId":11,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1747539105,"LAST_ACTIVITY":1747539105,"subjectCode":"MAT1","user_type":"SubjectTeacher"}
+GET: {"start":"2025-05-01","end":"2025-05-31","type":"excel"}
+
+Time: 2025-05-26 16:50:51
+Session: {"csrf_token":"be5a736304b681a427b9d03bc63d4ae41512608c2cf8bb0f0b9a4c5a38ffec7d","userId":2,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":2,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748271051,"LAST_ACTIVITY":1748271051,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 10
+
+Time: 2025-05-26 16:51:18
+Session: {"csrf_token":"be5a736304b681a427b9d03bc63d4ae41512608c2cf8bb0f0b9a4c5a38ffec7d","userId":2,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":2,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748271078,"LAST_ACTIVITY":1748271078,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 10
+
+Time: 2025-05-26 16:51:27
+Session: {"csrf_token":"be5a736304b681a427b9d03bc63d4ae41512608c2cf8bb0f0b9a4c5a38ffec7d","userId":2,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":2,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748271087,"LAST_ACTIVITY":1748271087,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 10
+
+Time: 2025-05-26 16:51:49
+Session: {"csrf_token":"be5a736304b681a427b9d03bc63d4ae41512608c2cf8bb0f0b9a4c5a38ffec7d","userId":2,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":2,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748271109,"LAST_ACTIVITY":1748271109,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 10
+
+Time: 2025-05-26 16:52:04
+Session: {"csrf_token":"be5a736304b681a427b9d03bc63d4ae41512608c2cf8bb0f0b9a4c5a38ffec7d","userId":2,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":2,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748271124,"LAST_ACTIVITY":1748271124,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 10
+
+Time: 2025-05-26 16:52:53
+Session: {"csrf_token":"be5a736304b681a427b9d03bc63d4ae41512608c2cf8bb0f0b9a4c5a38ffec7d","userId":2,"firstName":"John","lastName":"Smith","emailAddress":"john.smith@school.com","subjectId":2,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748271173,"LAST_ACTIVITY":1748271173,"subjectCode":"MATH101"}
+GET: {"start":"2025-05-01","end":"2025-05-31","type":"excel"}
+
+Query executed successfully. Row count: 10
+
+Time: 2025-06-01 22:39:41
+Session: {"csrf_token":"68e0d44a6a76fd959e249fb4ad9a93eeee52f61b214a3f84cda83a7089c6fb26","userId":3,"firstName":"Raja segar","lastName":"T","emailAddress":"math.teacher@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748810381,"LAST_ACTIVITY":1748810381,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 12
+
+Time: 2025-06-01 22:49:12
+Session: {"csrf_token":"68e0d44a6a76fd959e249fb4ad9a93eeee52f61b214a3f84cda83a7089c6fb26","userId":3,"firstName":"Raja segar","lastName":"T","emailAddress":"math.teacher@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748810952,"LAST_ACTIVITY":1748810952,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 12
+
+Time: 2025-06-02 08:38:21
+Session: {"csrf_token":"588e97d13c87b29f3c63b71e99a2e9824b984309d9c20d882c5b1f830af634c8","userId":3,"firstName":"Raja segar","lastName":"T","emailAddress":"math.teacher@school.com","subjectId":1,"subjectName":"Mathematics","userType":"SubjectTeacher","last_login":1748846301,"LAST_ACTIVITY":1748846301,"subjectCode":"MATH101"}
+GET: []
+
+Query executed successfully. Row count: 12
+

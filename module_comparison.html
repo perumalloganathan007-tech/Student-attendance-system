@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Teacher vs Class Teacher Module Comparison</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .comparison { display: flex; gap: 20px; }
+        .module { flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+        .subject { background-color: #e8f5e8; }
+        .class { background-color: #e8f0ff; }
+        h2 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+        .feature { margin: 10px 0; padding: 8px; background: rgba(255,255,255,0.7); border-radius: 3px; }
+        .access-links { text-align: center; margin: 20px 0; }
+        .access-links a { display: inline-block; margin: 10px; padding: 12px 20px; text-decoration: none; border-radius: 5px; color: white; }
+        .subject-link { background-color: #4CAF50; }
+        .class-link { background-color: #2196F3; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Subject Teacher vs Class Teacher Module Comparison</h1>
+    
+    <div class="access-links">
+        <a href="SubjectTeacher/index.php" class="subject-link">Access Subject Teacher Dashboard</a>
+        <a href="ClassTeacher/index.php" class="class-link">Access Class Teacher Dashboard (Reference)</a>
+    </div>
+
+    <div class="comparison">
+        <div class="module subject">
+            <h2>Subject Teacher Module</h2>
+            <div class="feature"><strong>Purpose:</strong> Manages attendance for a specific subject across multiple classes</div>
+            <div class="feature"><strong>Scope:</strong> Subject-focused (e.g., Mathematics, English, Science)</div>
+            <div class="feature"><strong>Students:</strong> All students taking the specific subject</div>
+            <div class="feature"><strong>Attendance:</strong> Subject-specific attendance tracking</div>
+            <div class="feature"><strong>Database Tables:</strong>
+                <ul>
+                    <li>tblsubjectteachers</li>
+                    <li>tblsubjectteacher_student</li>
+                    <li>tblsubjectattendance</li>
+                    <li>tblsubjects</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module class">
+            <h2>Class Teacher Module</h2>
+            <div class="feature"><strong>Purpose:</strong> Manages attendance for a specific class/section</div>
+            <div class="feature"><strong>Scope:</strong> Class-focused (e.g., Class 10-A, Class 9-B)</div>
+            <div class="feature"><strong>Students:</strong> All students in the assigned class</div>
+            <div class="feature"><strong>Attendance:</strong> General class attendance tracking</div>
+            <div class="feature"><strong>Database Tables:</strong>
+                <ul>
+                    <li>tblclassteacher</li>
+                    <li>tblclass</li>
+                    <li>tblclassarms</li>
+                    <li>tblattendance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2>Key Features Comparison</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Subject Teacher</th>
+            <th>Class Teacher</th>
+        </tr>
+        <tr>
+            <td>Take Attendance</td>
+            <td>✅ For specific subject</td>
+            <td>✅ For entire class</td>
+        </tr>
+        <tr>
+            <td>View Students</td>
+            <td>✅ Students taking the subject</td>
+            <td>✅ Students in the class</td>
+        </tr>
+        <tr>
+            <td>Attendance Reports</td>
+            <td>✅ Subject-specific reports</td>
+            <td>✅ Class-wide reports</td>
+        </tr>
+        <tr>
+            <td>Date Range Reports</td>
+            <td>✅ Available</td>
+            <td>✅ Available</td>
+        </tr>
+        <tr>
+            <td>Download Records</td>
+            <td>✅ Subject attendance data</td>
+            <td>✅ Class attendance data</td>
+        </tr>
+    </table>
+
+    <h2>Navigation Structure</h2>
+    <div class="comparison">
+        <div class="module subject">
+            <h3>Subject Teacher Menu</h3>
+            <ul>
+                <li>Dashboard</li>
+                <li>Take Attendance</li>
+                <li>View Students</li>
+                <li>View Attendance</li>
+                <li>Student Performance</li>
+                <li>Reports</li>
+                <li>Profile</li>
+            </ul>
+        </div>
+
+        <div class="module class">
+            <h3>Class Teacher Menu</h3>
+            <ul>
+                <li>Dashboard</li>
+                <li>Take Attendance</li>
+                <li>View Students</li>
+                <li>View Attendance</li>
+                <li>Student Attendance (Individual)</li>
+                <li>Reports</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Login Information</h2>
+    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+        <h3>Subject Teacher Login:</h3>
+        <p><strong>Email:</strong> john.smith@school.com<br>
+        <strong>Password:</strong> Password@123</p>
+        
+        <h3>Class Teacher Login:</h3>
+        <p>Use the same system but access through the Class Teacher login page.<br>
+        You may need to create a class teacher account if one doesn't exist.</p>
+    </div>
+
+    <h2>Development Notes</h2>
+    <ul>
+        <li>Both modules follow similar MVC patterns</li>
+        <li>Similar UI/UX design using Bootstrap and Ruang Admin theme</li>
+        <li>Session management and authentication work the same way</li>
+        <li>Database queries are the main difference (subject vs class focus)</li>
+        <li>Both use similar AJAX calls for dynamic content</li>
+    </ul>
+
+    <div class="access-links">
+        <p><strong>Ready to explore?</strong></p>
+        <a href="SubjectTeacher/index.php" class="subject-link">Start with Subject Teacher</a>
+        <a href="ClassTeacher/index.php" class="class-link">Compare with Class Teacher</a>
+    </div>
+</body>
+</html>

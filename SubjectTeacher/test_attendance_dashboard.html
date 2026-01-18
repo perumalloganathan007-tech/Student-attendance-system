@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Attendance Testing Dashboard</title>
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <style>
+        .test-step {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #007bff;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        .test-step:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .status-pending { background-color: #ffc107; }
+        .status-success { background-color: #28a745; }
+        .status-error { background-color: #dc3545; }
+        .test-button {
+            margin: 5px;
+            min-width: 200px;
+        }
+        .flow-arrow {
+            font-size: 1.5em;
+            color: #007bff;
+            margin: 10px 0;
+        }
+        .checklist-item {
+            padding: 10px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .checklist-item:hover {
+            background-color: #f8f9fa;
+        }
+        .checklist-item.completed {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="h3 mb-4 text-center">
+                    <i class="fas fa-clipboard-check text-primary"></i> 
+                    Take Attendance Testing Dashboard
+                </h1>
+                
+                <!-- Quick Status Check -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5><i class="fas fa-tachometer-alt"></i> Quick System Check</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="system_status_check.php" class="btn btn-info test-button">
+                                    <i class="fas fa-check-circle"></i> System Status
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="debug_attendance.php" class="btn btn-warning test-button">
+                                    <i class="fas fa-bug"></i> Debug Session
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="fix_attendance_table.php" class="btn btn-danger test-button">
+                                    <i class="fas fa-database"></i> Fix Database
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Flow Testing -->
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5><i class="fas fa-route"></i> Navigation Flow Testing</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <h6>Follow this exact sequence to test the complete flow:</h6>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2 text-center">
+                                <div class="test-step card p-3">
+                                    <h6><i class="fas fa-home"></i> Step 1</h6>
+                                    <a href="index.php" class="btn btn-primary btn-sm">Dashboard</a>
+                                    <small class="text-muted d-block mt-2">Start here</small>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-1 text-center">
+                                <div class="flow-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-2 text-center">
+                                <div class="test-step card p-3">
+                                    <h6><i class="fas fa-bars"></i> Step 2</h6>
+                                    <p class="small mb-2">Click sidebar<br>"Attendance"</p>
+                                    <small class="text-muted">Expand menu</small>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-1 text-center">
+                                <div class="flow-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-2 text-center">
+                                <div class="test-step card p-3">
+                                    <h6><i class="fas fa-check"></i> Step 3</h6>
+                                    <a href="takeAttendance.php" class="btn btn-success btn-sm">Take Attendance</a>
+                                    <small class="text-muted d-block mt-2">Main test</small>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-1 text-center">
+                                <div class="flow-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-2 text-center">
+                                <div class="test-step card p-3">
+                                    <h6><i class="fas fa-eye"></i> Step 4</h6>
+                                    <a href="viewTodayAttendance.php" class="btn btn-info btn-sm">View Results</a>
+                                    <small class="text-muted d-block mt-2">Verify saved</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alternative Testing Options -->
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5><i class="fas fa-tools"></i> Alternative Testing Options</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-edit"></i> Simplified Attendance</h6>
+                                <p class="small text-muted">Use this if the main attendance system has issues:</p>
+                                <a href="simple_take_attendance.php" class="btn btn-outline-primary">
+                                    <i class="fas fa-user-check"></i> Simple Take Attendance
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-list"></i> All Navigation Links</h6>
+                                <p class="small text-muted">Test all sidebar navigation at once:</p>
+                                <a href="navigation_test.html" class="btn btn-outline-secondary">
+                                    <i class="fas fa-link"></i> Navigation Test Page
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testing Checklist -->
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        <h5><i class="fas fa-clipboard-list"></i> Testing Checklist</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="testingChecklist">
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check1">
+                                <label for="check1"><strong>Login Check:</strong> Logged in as Subject Teacher with valid session</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check2">
+                                <label for="check2"><strong>Dashboard Access:</strong> Can access index.php without errors</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check3">
+                                <label for="check3"><strong>Sidebar Visible:</strong> Sidebar shows current session/term information</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check4">
+                                <label for="check4"><strong>Attendance Menu:</strong> Can expand "Attendance" section in sidebar</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check5">
+                                <label for="check5"><strong>Take Attendance Link:</strong> "Take Attendance" link is visible and clickable</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check6">
+                                <label for="check6"><strong>Page Loads:</strong> takeAttendance.php loads without database errors</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check7">
+                                <label for="check7"><strong>Students Listed:</strong> Page shows assigned students for attendance</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check8">
+                                <label for="check8"><strong>Attendance Form:</strong> Can mark students present/absent and submit</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check9">
+                                <label for="check9"><strong>Save Success:</strong> Attendance saves successfully with success message</label>
+                            </div>
+                            
+                            <div class="checklist-item" onclick="toggleCheckbox(this)">
+                                <input type="checkbox" id="check10">
+                                <label for="check10"><strong>View Results:</strong> Can view today's attendance and see saved records</label>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3 text-center">
+                            <button onclick="resetChecklist()" class="btn btn-outline-secondary">
+                                <i class="fas fa-undo"></i> Reset Checklist
+                            </button>
+                            <button onclick="exportResults()" class="btn btn-outline-success">
+                                <i class="fas fa-download"></i> Export Test Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Issues & Solutions -->
+                <div class="card mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h5><i class="fas fa-exclamation-triangle"></i> Common Issues & Quick Fixes</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="accordion" id="issuesAccordion">
+                            <!-- Issue 1 -->
+                            <div class="card">
+                                <div class="card-header" id="issue1">
+                                    <h6 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1">
+                                            <i class="fas fa-database text-danger"></i> Database Error: "Unknown column 'sa.date'"
+                                        </button>
+                                    </h6>
+                                </div>
+                                <div id="collapse1" class="collapse" data-parent="#issuesAccordion">
+                                    <div class="card-body">
+                                        <p><strong>Solution:</strong> Run the database fix script:</p>
+                                        <a href="fix_attendance_table.php" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-wrench"></i> Fix Database Tables
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Issue 2 -->
+                            <div class="card">
+                                <div class="card-header" id="issue2">
+                                    <h6 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse2">
+                                            <i class="fas fa-user-times text-warning"></i> No Students Listed for Attendance
+                                        </button>
+                                    </h6>
+                                </div>
+                                <div id="collapse2" class="collapse" data-parent="#issuesAccordion">
+                                    <div class="card-body">
+                                        <p><strong>Reason:</strong> No students assigned to this subject teacher.</p>
+                                        <p><strong>Solutions:</strong></p>
+                                        <ul>
+                                            <li>Check system status to verify student assignments</li>
+                                            <li>Use debug mode to see detailed session information</li>
+                                            <li>Contact admin to assign students to your subject</li>
+                                        </ul>
+                                        <a href="debug_attendance.php" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-search"></i> Debug Session
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Issue 3 -->
+                            <div class="card">
+                                <div class="card-header" id="issue3">
+                                    <h6 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse3">
+                                            <i class="fas fa-lock text-info"></i> Session or Login Issues
+                                        </button>
+                                    </h6>
+                                </div>
+                                <div id="collapse3" class="collapse" data-parent="#issuesAccordion">
+                                    <div class="card-body">
+                                        <p><strong>Solutions:</strong></p>
+                                        <ul>
+                                            <li>Ensure you're logged in as a Subject Teacher (not Admin/ClassTeacher)</li>
+                                            <li>Check if session has expired - re-login if needed</li>
+                                            <li>Verify you have a subject assigned to your account</li>
+                                        </ul>
+                                        <a href="../login.php" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-sign-in-alt"></i> Re-login
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact & Support -->
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h5><i class="fas fa-life-ring"></i> Need Help?</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="mb-3">If you encounter any issues during testing:</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="attendance_test_guide.html" class="btn btn-outline-info">
+                                    <i class="fas fa-book"></i> View Testing Guide
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="system_status_check.php" class="btn btn-outline-primary">
+                                    <i class="fas fa-chart-line"></i> System Status
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <button onclick="window.print()" class="btn btn-outline-dark">
+                                    <i class="fas fa-print"></i> Print This Page
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleCheckbox(element) {
+            const checkbox = element.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+                element.classList.add('completed');
+            } else {
+                element.classList.remove('completed');
+            }
+            
+            updateProgress();
+        }
+        
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('#testingChecklist input[type="checkbox"]');
+            const checked = document.querySelectorAll('#testingChecklist input[type="checkbox"]:checked');
+            const progress = (checked.length / checkboxes.length) * 100;
+            
+            // You could add a progress bar here if needed
+            console.log(`Testing Progress: ${progress.toFixed(1)}%`);
+        }
+        
+        function resetChecklist() {
+            const checkboxes = document.querySelectorAll('#testingChecklist input[type="checkbox"]');
+            const items = document.querySelectorAll('#testingChecklist .checklist-item');
+            
+            checkboxes.forEach(cb => cb.checked = false);
+            items.forEach(item => item.classList.remove('completed'));
+            
+            updateProgress();
+        }
+        
+        function exportResults() {
+            const checkboxes = document.querySelectorAll('#testingChecklist input[type="checkbox"]');
+            const results = [];
+            
+            checkboxes.forEach((cb, index) => {
+                const label = cb.nextElementSibling.textContent;
+                results.push(`${index + 1}. ${cb.checked ? '✓' : '✗'} ${label}`);
+            });
+            
+            const resultsText = `Take Attendance Testing Results\n` +
+                               `Generated: ${new Date().toLocaleString()}\n\n` +
+                               results.join('\n');
+            
+            const blob = new Blob([resultsText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'attendance_test_results.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        // Auto-save checklist state
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('#testingChecklist input[type="checkbox"]');
+            
+            // Load saved state
+            checkboxes.forEach((cb, index) => {
+                const saved = localStorage.getItem(`checklist_${index}`);
+                if (saved === 'true') {
+                    cb.checked = true;
+                    cb.closest('.checklist-item').classList.add('completed');
+                }
+            });
+            
+            // Save state on change
+            checkboxes.forEach((cb, index) => {
+                cb.addEventListener('change', function() {
+                    localStorage.setItem(`checklist_${index}`, cb.checked);
+                });
+            });
+            
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
